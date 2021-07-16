@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.grpc";
+option java_outer_classname = "Fretes";
+option objc_class_prefix = "HLW";
+
+package br.com.grpc;
+
+service FretesService {
+  rpc send (FretesRequest) returns (FretesReply) {}
+  rpc calculaFrete(CalculaFreteRequest) returns (CalculaFreteResponse) {}
+}
+
+message CalculaFreteRequest{
+  string cep = 1;
+}
+
+message CalculaFreteResponse{
+  double valor = 1;
+  string cep = 2;
+}
+
+message ErrorDetails{
+  int32 code = 1;
+  string message = 2;
+}
+
+message FretesRequest {
+  string name = 1;
+}
+
+message FretesReply {
+  string message = 1;
+}

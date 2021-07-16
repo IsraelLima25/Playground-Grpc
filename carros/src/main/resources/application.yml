@@ -1,0 +1,26 @@
+micronaut:
+  application:
+    name: casaDoCodigoMic
+datasources:
+  default:
+    url: jdbc:mysql://localhost/db_carros?serverTimezone=America/Sao_Paulo&createDatabaseIfNotExist=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 'admin'
+    dialect: org.hibernate.dialect.MySQL8Dialect
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
+        format_sql: true
+
+logger:
+  levels:
+    io.micronaut.transaction: DEBUG
+
+
+
